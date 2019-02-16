@@ -11,14 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
 const handleFormSubmit = function(event) {
   event.preventDefault()
 
-// console.log(event);
-
   const outcomeBlock = creatGamesList(event.target);
 
-  const list = getGamesInfo(event.target);
+  // const gameInfo = gameInfo(event.target);
 
   const gamesList = document.querySelector('#games-list');
   gamesList.appendChild(outcomeBlock)
+
+  const gamesListMod = document.querySelector('.game p');
+  gamesListMod.textContent = this.title.value;
+  // gamesListMod.appendChild(outcomeBlock)
+
+  // const testListMod = document.querySelector('.test-div');
+  // testListMod.textContent = this.title.value;
+
+const testListMod = document.querySelector('.test-div');
+  for (var i=0; i<5; i++) {
+    testListMod.textContent = this.title.value;
+  }
+
+
+
+
+
+
 
   event.target.reset();
 }
@@ -28,20 +44,29 @@ const handleFormSubmit = function(event) {
 
 const creatGamesList = function (form) {
 
-  // console.log(form);
-
+  // console.log(this);
 
 const outcomeBlock = document.createElement('div');
 outcomeBlock.classList.add('game');
 const titleParagraph = document.createElement('p');
-const categoryParagraph = document.createElement('p');
-const scoreParagraph = document.createElement('p');
-const platform = document.createElement('p');
+// const categoryParagraph = document.createElement('p');
+// const scoreParagraph = document.createElement('p');
+// const platform = document.createElement('p');
 
 outcomeBlock.appendChild(titleParagraph);
-outcomeBlock.appendChild(categoryParagraph);
-outcomeBlock.appendChild(scoreParagraph);
-outcomeBlock.appendChild(platform);
+// outcomeBlock.appendChild(categoryParagraph);
+// outcomeBlock.appendChild(scoreParagraph);
+// outcomeBlock.appendChild(platform);
+
+
+// var c = document.createDocumentFragment();
+for (var i=0; i<5; i++) {
+  var e = document.createElement("div");
+  e.className = "test-div";
+  outcomeBlock.appendChild(e);
+}
+// document.body.appendChild(c);
+
 
 // const listResult = document.querySelector('#games-list');
 // listResult.appendChild(outcomeBlock)
@@ -50,29 +75,23 @@ return outcomeBlock
 
 }
 
-const getGamesInfo = function (from) {
+// ______________
 
-  const list = document.querySelector('.game');
 
-console.log(list);
-
-  // list.titleParagraph.textContent = this.title.value;
-  // list.categoryParagraph.textContent = this.category.value;
-  // list.scoreParagraph.textContent = this.score.value;
-  // list.platform.textContent = form.elements['platform'].value;
-
-}
-
-// const putGameInfoTogether = function (from) {
+// const gameInfo = function(form) {
 //
-//   outcomeBlock.appendChild(titleParagraph);
-//   outcomeBlock.appendChild(categoryParagraph);
-//   outcomeBlock.appendChild(scoreParagraph);
-//   outcomeBlock.appendChild(platform);
+//   titleParagraph = this.title.value;
+//   categoryParagraph = this.category.value;
+//   scoreParagraph = this.score.value;
+//   platform = form.elements['platform'].value;
 //
+// console.log(titleParagraph);
+
 // }
 
-// ______________
+
+
+
 
 const handleDeleteClick = function() {
   const gamesList = document.querySelector('#games-list')
