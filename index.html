@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Games List</title>
+  <script src="js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+</head>
+<body>
+  <form class="form-main" id="form-master" action="index.html" method="post">
+
+    <div id="form-wrapper">
+
+      <div class="from-item">
+        <label for="title" class="from-data">Title:</label>
+        <input type="text" id="title" required>
+      </div>
+
+      <div class="from-item">
+        <label for="category" class="from-data">Category:</label>
+        <select id="category">
+          <option value="" disabled selected></option>
+          <option value="Action">Action</option>
+          <option value="Action-adventure">Action-adventure</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Role-playing">Role-playing</option>
+          <option value="Simulation">Simulation</option>
+          <option value="Strategy">Strategy</option>
+          <option value="Sports">Sports</option>
+          <option value="MMO">MMO</option>
+        </select>
+      </div>
+
+      <div class="from-item">
+        <label for="score" class="from-data">Metacritic Score:</label>
+        <input type="number" id="score"
+        min="0.1" max="10" step="0.1">
+      </div>
+
+      <div>
+        <label for="Xbox" class="from-data">Xbox:</label>
+        <input type="radio" name="platform" value="Xbox" checked>
+
+        <label for="Play-Station" class="from-data">Play-Station:</label>
+        <input type="radio" name="platform" value="Play-Station">
+
+        <label for="PC" class="from-data">PC:</label>
+        <input type="radio" name="platform" value="PC">
+
+        <label for="Nintendo-Switch" class="from-data">Nintendo-Switch:</label>
+        <input type="radio" name="platform" value="Nintendo-Switch">
+
+      </div>
+
+
+    </div>
+
+    <input type="submit" value="save"/>
+
+  </form>
+
+  <div>
+    <button type="button" name="delete" id="delete-btn">Delete All</button>
+  </div>
+
+  <h1>Games List</h1>
+
+  <div id="games-list"></div>
+
+</body>
+</html>
